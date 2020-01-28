@@ -1,0 +1,75 @@
+{% extends 'all-files/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MobiCash</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+.hr{ 
+display: block;
+margin-left:400px;
+margin-right: 200px;
+border-style: inset;
+border-width: 1px;
+} 
+footer{
+/* position: fixed; */
+background-color:transparent;
+left: 0;
+bottom: 0;
+width: 100%;
+color:rgb(8, 8, 8);
+text-align: center;
+font-size: 10px;
+}
+.page {
+width: calc(100% - 17rem);
+margin-left: 17rem;
+transition: all 0.4s;
+}
+th{
+    color: #ff9a02;
+}
+i{
+color: #ff9a02;
+}
+</style>
+<body>
+<div class="page">
+    <img src="/static/images/cover1.png" style="margin-left: 27px;">
+</div>
+<div class="card" style="box-shadow: 5px 5px 7px 7px #ff9a02;width: 45%;margin-left: 450px;margin-top: 20px;"><br>
+    <span><h3 class="text-center" style="font-family: 'Source Sans Pro', sans-serif;color: #ff9a02">Update a Customer</h3></span>
+    <div class="card-body">
+      <form action="{% url 'update' pk.id%}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form form layout='inline'%}
+          <input type="submit" value="Update" class="btn btn-warning" style="background-color: #ff9a02">
+      </form>
+      {% block scripts %}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      {% bootstrap_javascript %} {% endblock %}
+    </div>
+  </div>
+
+<br><br><br><br><br><br><br><br><br>
+<div>
+    <footer>
+    <hr class="hr">
+    <p style="margin-left:300px;">@2019 by ____Alexie.Manirakora</p>
+    </footer>
+</div>   
+</body>
+</html>
+{% endblock %}
+
+
+
+                  
+                           

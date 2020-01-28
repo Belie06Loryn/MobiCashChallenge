@@ -1,0 +1,66 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+.hr{ 
+  display: block;
+  margin-left:200px;
+  margin-right: 200px;
+  border-style: inset;
+  border-width: 1px;
+} 
+footer{
+  position: fixed;
+  background-color:transparent;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color:rgb(8, 8, 8);
+  text-align: center;
+  font-size: 10px;
+}
+</style>
+<body>
+<br>
+<br>
+<div class="row" style="margin-top: -30px;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card" style="box-shadow: 5px 5px 7px 7px #ff9a02;background-color: #333333;"><br>
+            <img src="/static/images/mini_logo.png" style="width: 110px;">
+            <span><h3 class="text-center" style="font-family: 'Source Sans Pro', sans-serif;color: #ff9a02;">Register</h3></span>
+            <div class="card-body">
+              {% if form.errors %}
+              <p> Some Information Might be Incorrect </p>
+              {% endif %}
+                <form style="color: #ff9a02;" action="/accounts/register/" method="post">
+                    {% csrf_token%}
+                    {% bootstrap_form form%}
+                    <input class="btn btn-warning" type="submit" style="background-color: #ff9a02;" value="Sign Up">
+                    <input type="hidden" name="next" value="{%url 'page'%}">
+                  </form><br>
+                <a href="/accounts/login/"><p style="font-family: 'Source Sans Pro', sans-serif;color: #ff9a02;">Login</p></a>
+            </div>
+
+        </div><br><br><br><br>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+  <div>
+    <footer>
+      <hr class="hr">
+      <p style="margin-left:300px;">@2019 by ____Alexie.Manirakora</p>
+    </footer>
+  </div>   
+</body>
+</html>
+{% endblock %}

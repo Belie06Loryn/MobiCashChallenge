@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.vertical-nav {
+  min-width: 15%;
+  width: 10%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+}
+i{
+  color: #ff9a02;
+}
+</style>
+<body>
+<div class="vertical-nav">
+    <br>
+    <a href="{% url 'page' %}"><img src="/static/images/mini_logo.png" style="width: 120px;"></a>
+    <br><br>
+    <ul class="nav flex-column mb-0">
+        <li class="nav-item">
+        <a href="{% url 'add_customer' %}" class="nav-link text-white font-italic">
+            <i class="fa fa-address-book-o mr-3 fa-fw"></i>
+            Add New Customer
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{% url 'view_customer' %}" class="nav-link text-white font-italic">
+            <i class="fa fa-list-ul mr-3 fa-fw"></i>
+            View Customer
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{% url 'edit_customer' %}" class="nav-link text-white font-italic">
+            <i class="fa fa-pencil mr-3 fa-fw"></i>
+            Edit Customer
+        </a>
+        </li>
+        <li class="nav-item">
+        <a href="{% url 'delete_customer' %}" class="nav-link text-white font-italic">
+            <i class="fa fa-trash mr-3 fa-fw"></i>
+            Delete Customer
+        </a>
+        </li>
+        <li class="nav-item">
+        {% if user.is_authenticated %}
+        <a href="/logout" class="nav-link text-white font-italic">
+            <i class="fa fa-close mr-3 fa-fw"></i>
+            Logout
+        </a>
+        {% endif %}
+        </li>
+    </ul>
+</div>
+</body>
+</html>                            
+
+
