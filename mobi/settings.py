@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'cash',
     'bootstrap4',
-    'tinymce',
     'rest_framework',
     'rest_framework.authtoken',
     'django.contrib.admin',
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -53,6 +53,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -62,6 +63,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mobi.urls'
+
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 TEMPLATES = [
     {

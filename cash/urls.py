@@ -12,6 +12,9 @@ urlpatterns=[
     url(r'^edit_customer/$',views.edit_customer,name = 'edit_customer'),
     url(r'^delete_customer/$',views.delete_customer,name = 'delete_customer'),
     url(r'^api/lists/$', views.AddList.as_view()),
+    url(r'^api/adds/$', views.AddList.as_view()),
+    url(r'^api/puts/(?P<pk>\d+)$', views.AddEdition.as_view()),
+    url(r'^api/dele/(?P<pk>\d+)$', views.AddEdition.as_view()),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

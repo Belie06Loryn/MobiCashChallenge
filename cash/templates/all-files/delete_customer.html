@@ -50,7 +50,6 @@ i{
         <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col" style="color: #ff9a02;">No</th>
                 <th scope="col" style="color: #ff9a02;">Name</th>
                 <th scope="col" style="color: #ff9a02;">NID</th>
                 <th scope="col" style="color: #ff9a02;">Phone</th>
@@ -60,11 +59,10 @@ i{
             <tbody>
             {% for cust in customers %}
               <tr>
-                <th scope="row">{{cust.id}}</th>
                 <td>{{cust.name}}</td>
                 <td>{{cust.nid}}</td>
                 <td>{{cust.fone}}</td>
-                <td><a href="{% url 'dele' cust.id %}"><i class="fa fa-trash mr-3 fa-fw"></i></a></td>
+                <td><a href="{% url 'dele' cust.nid %}"><i class="fa fa-trash mr-3 fa-fw"></i></a></td>
               </tr>
             {% endfor %}
             </tbody>

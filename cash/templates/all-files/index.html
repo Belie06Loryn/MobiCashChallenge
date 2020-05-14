@@ -35,6 +35,18 @@ footer{
   transition: all 0.4s;
 }
 </style>
+<script>
+async function getDatas() {
+  try {
+      const result = await fetch('https://cors-anywhere.herokuapp.com/https://dev.mobivat.com:8080/vsdc_module/mobivat/api/product/productId?upc=224444445');
+      const data = await result.json();
+      console.log(data.upc);
+      return data;
+  } catch(error) {
+      alert(error);
+  }
+}
+</script>
 <body>
   <div class="page">
     <img src="/static/images/cover1.png" style="margin-left: 27px;">
@@ -57,17 +69,19 @@ footer{
             </tr>
           </thead>
           <tbody>
+            <!-- {% for data in data %}
             <tr>
-              <th scope="row">{{sku}}</th>
-              <td>{{upc}}</td>
-              <td>{{pname}}</td>
-              <td>{{description}}</td>
-              <td>{{taxcode}}</td>
-              <td>{{tax_rate}}</td>
-              <td>{{unitp}}</td>
-              <td>{{quantity}}</td>
-              <td>{{tax_percent}}</td>
+              <th scope="row">{{data.sku}}</th>
+              <td>{{data.upc}}</td>
+              <td>{{data.pname}}</td>
+              <td>{{data.description}}</td>
+              <td>{{data.taxcode}}</td>
+              <td>{{data.tax_rate}}</td>
+              <td>{{data.unitp}}</td>
+              <td>{{data.quantity}}</td>
+              <td>{{data.tax_percent}}</td>
             </tr>
+            {% endfor %} -->
           </tbody>
         </table>  
   </div>
