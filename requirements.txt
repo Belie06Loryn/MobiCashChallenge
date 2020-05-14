@@ -5,7 +5,7 @@ beautifulsoup4==4.8.1
 Click==7.0
 confusable-homoglyphs==3.2.0
 cryptography==2.1.4
-Django==1.11.26
+Django==1.11.28
 django-admin-shortcuts==2.0.0
 django-bootstrap4==1.0.1
 django-jet==1.0.8
