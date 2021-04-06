@@ -9,7 +9,7 @@ Django==1.11.26
 django-admin-shortcuts==2.0.0
 django-bootstrap4==1.0.1
 django-jet==1.0.8
-django-registration==2.4.1
+django-registration==3.1.2
 enum34==1.1.6
 Flask==1.1.1
 Flask-Migrate==2.5.2
