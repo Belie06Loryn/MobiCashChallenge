@@ -20,7 +20,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 keyring==10.6.0
 keyrings.alt==3.0
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 numpy==1.13.3
 Pillow==6.2.1
